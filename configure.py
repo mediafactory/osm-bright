@@ -6,10 +6,10 @@ config = { "postgis": {} }
 
 # PostGIS connection setup
 # Leave empty for Mapnik defaults. The only required parameter is dbname.
-config["postgis"]["host"]     = ""
+config["postgis"]["host"]     = "localhost"
 config["postgis"]["port"]     = ""
 config["postgis"]["dbname"]   = "osm"
-config["postgis"]["user"]     = ""
+config["postgis"]["user"]     = "postgres"
 config["postgis"]["password"] = ""
 
 # Increase performance if you are only rendering a particular area by
@@ -35,8 +35,8 @@ import json
 from sys import path
 from os.path import join
 
-template = join(path[0], 'osm-bright.imposm.mml')
-output = join(path[0], 'osm-bright', 'osm-bright.mml')
+template = join(path[0], 'osm-bright-minimal.imposm.mml')
+output = join(path[0], 'osm-bright-minimal', 'project.mml')
 
 with open(template, 'r') as f:
   newf = json.loads(f.read())

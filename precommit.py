@@ -22,8 +22,8 @@ import json
 from sys import path
 from os.path import join
 
-output = join(path[0], 'osm-bright.imposm.mml')
-template = join(path[0], 'osm-bright', 'osm-bright.mml')
+output = join(path[0], 'osm-bright-minimal.imposm.mml')
+template = join(path[0], 'osm-bright-minimal', 'project.mml')
 
 with open(template, 'r') as f:
   newf = json.loads(f.read())
