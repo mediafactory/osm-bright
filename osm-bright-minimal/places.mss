@@ -47,23 +47,24 @@
 */
 #place::marker[type='city'][zoom>4][zoom<9] {
     marker-width: 2;
-    marker-fill: #999;
+    marker-fill: #333;
     marker-line-color: #fff;
 }
 #place::city[type='city'][zoom>4][zoom<15] {
   text-name:'[name]';
   text-face-name:@sans;
   text-placement:point;
-  text-fill:#777;
+  text-fill:#444;
   text-halo-fill:fadeout(#fff,10);
   text-halo-radius:2;
+  text-transform: uppercase;
   [zoom<=8] {
     text-size: 10;
     text-halo-radius:1;
     text-dx: 5;
     text-dy: 3;
     text-placement-type: simple;
-    text-placements: "E,W,N,S";
+    text-placements: "E,W,NE,SW,NW,NE,N,S";
     text-wrap-width: 50;
   }
   [zoom=9] {

@@ -16,11 +16,11 @@
 /* == 1. FONTS ====================================================== */
 
 /* We're only using @sans so far. TODO: more type variety. */
-@sans_lt:           "Helvetica Neue LT Std 55 Roman","DejaVu Sans Book";
-@sans:              "Helvetica Neue LT Std 65 Medium","DejaVu Sans Book";
-@sans_bold:         "Arial Bold", "DejaVu Sans Bold";
-@sans_italic:       "Arial Italic", "DejaVu Sans Oblique";
-@sans_bold_italic:  "Arial Bold Italic", " DejaVu Sans Bold Oblique";
+@sans_lt:           "Droid Sans Regular","Helvetica Neue LT Std 55 Roman","DejaVu Sans Book";
+@sans:              "Droid Sans Regular","Helvetica Neue LT Std 65 Medium","DejaVu Sans Book";
+@sans_bold:         "Droid Sans Bold","Arial Bold", "DejaVu Sans Bold";
+@sans_italic:       "Droid Sans Italic","Arial Italic", "DejaVu Sans Oblique";
+@sans_bold_italic:  "Droid Sans Bold Italic","Arial Bold Italic", " DejaVu Sans Bold Oblique";
 
 /* Some fonts are larger or smaller than others. Use this variable to
    globally increase or decrease the font sizes. */
@@ -30,8 +30,8 @@
 
 /* ---- Lancover & Landuse ------------------------------------------ */
 
-@land:              #e8e8e8;
-@water:             #d0d0d0;
+@land:              lighten(#309fc5,25%);/*#e8e8e8;*/
+@water:             #309fc5;/*#d0d0d0;*/
 
 /* ---- Roads ------------------------------------------------------- */
 /* For each class of road there are three color variables:
