@@ -178,16 +178,17 @@
       "Datasource": {
         "dbname": "osm", 
         "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34", 
-        "geometry_field": "", 
+        "geometry_field": "geometry", 
         "key_field": "", 
-        "table": "( select geometry, type, tunnel, class\nfrom osm_roads where type in \n('motorway', 'motorway_link', 'trunk', 'trunk_link', 'primary', 'primary_link', 'secondary', 'secondary_link', 'tertiary', 'tertiary_link', 'road', 'residential', 'unknown', 'unclassified', 'living_street', 'service')\norder by z_order) as road", 
+        "table": "( SELECT geometry, type, tunnel,\n  CASE\n    WHEN type IN ('motorway', 'trunk') THEN 'motorway'\n    WHEN type IN ('primary', 'secondary') THEN 'mainroad'\n    WHEN type IN ('motorway_link', 'trunk_link', 'primary_link', 'secondary_link', 'tertiary', 'tertiary_link', 'residential', 'unclassified', 'road', 'living_street') THEN 'minorroad'\n    WHEN type IN ('service', 'track') THEN 'service'\n    WHEN type IN ('path', 'cycleway', 'footway', 'pedestrian', 'bridleway') THEN 'noauto'\n    WHEN type IN ('light_rail', 'subway', 'narrow_guage', 'rail', 'tram') THEN 'railway'\n    ELSE 'other' END AS class\n  FROM osm_roads\n  ORDER BY z_order\n) AS data", 
         "type": "postgis"
       }, 
       "class": "", 
       "geometry": "linestring", 
       "id": "roads_high", 
       "name": "roads_high", 
-      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over", 
+      "srs-name": "900913"
     }, 
     {
       "Datasource": {
@@ -422,8 +423,8 @@
       "z_order", 
       "class"
     ], 
-    "layer": "bridge", 
-    "template_teaser": "type={{{type}}} <br>\nz_order={{{z_order}}} <br>\nclass={{{class}}}"
+    "layer": "roads_high", 
+    "template_teaser": "type={{{type}}} <br>\nclass={{{class}}}"
   }, 
   "legend": "", 
   "maxzoom": 22, 

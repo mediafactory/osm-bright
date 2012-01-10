@@ -51,9 +51,7 @@
 
 @track:             #aaa;
 
-@rail_line:         #999;
-@rail_fill:         #fff;
-@rail_case:         #999;
+@rail_line:         #fff;
 
 @aeroway:           rgb(180,180,180);
 

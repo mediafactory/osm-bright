@@ -8,7 +8,7 @@ config = { "postgis": {} }
 # Leave empty for Mapnik defaults. The only required parameter is dbname.
 config["postgis"]["host"]     = "localhost"
 config["postgis"]["port"]     = ""
-config["postgis"]["dbname"]   = "osm"
+config["postgis"]["dbname"]   = "osm_boston"
 config["postgis"]["user"]     = "postgres"
 config["postgis"]["password"] = ""
 
@@ -18,6 +18,7 @@ config["postgis"]["password"] = ""
 # whole world is "-20037508.34 -20037508.34 20037508.34 20037508.34".
 # Leave blank to let Mapnik estimate.
 config["postgis"]["extent"] = "-20037508.34 -20037508.34 20037508.34 20037508.34"
+config["postgis"]["extent"] = "-7999527.70803848 5153649.77687553,-7858336.19091845 5266722.19702023"
 
 # Land shapefiles required for the style. If you have already downloaded
 # these or wish to use different versions, specify their paths here.
