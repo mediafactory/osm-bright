@@ -70,8 +70,19 @@
     line-color: @road_minor;
     line-width: 0;
   }
-  [class='mainroad'] { line-color: @road_medium; }
-  [class='motorway'] { line-color: @road_major; }
+  [class='mainroad'] {
+    line-color: @road_medium;
+  }
+  [class='motorway'] {
+    line-color: @road_major;
+  }  
+  [class='service'],
+  [class='minorroad'],
+  [class='mainroad'],
+  [class='motorway']{
+    line-cap: round;
+    line-join: round;
+  }
   [class='minorroad'][tunnel=1],
   [class='mainroad'][tunnel=1],
   [class='motorway'][tunnel=1] {
@@ -79,6 +90,7 @@
     line-cap: butt;
     line-opacity: 0.5;
   }
+  
   [zoom=11] {
     [class='motorway'] { line-width: @rdz11_maj; }
     [class='mainroad'] { line-width: @rdz11_med; }
@@ -128,7 +140,7 @@
     [class='mainroad'] { line-width: @rdz17_med; }
     [class='minorroad']{ line-width: @rdz17_min; }
     [class='service']  { line-width: @rdz17_min / 2; }
-    [class='noauto']   { line-width: @rdz17_min / 4; line-dasharray: 2,1; }
+    [class='noauto']   { line-width: @rdz17_min / 4; line-dasharray: 2,2; }
     [class='railway']  { line-width: 0.2; }
   }
   [zoom=18] {
@@ -136,7 +148,7 @@
     [class='mainroad'] { line-width: 30; }
     [class='minorroad']{ line-width: 20; }
     [class='service']  { line-width: @rdz17_min / 2; }
-    [class='noauto']   { line-width: @rdz17_min / 4; line-dasharray: 2,1; }
+    [class='noauto']   { line-width: @rdz17_min / 4; line-dasharray: 3,3; }
     [class='railway']  { line-width: 4; }
   }
 }
@@ -175,7 +187,28 @@
   [zoom>=18] { text-size: 14; }
 }*/
 
-#road_label[zoom>=15][class='mainroads'] {
+#road_label[zoom>=15][class='motorway'] {
+  text-transform: uppercase;
+  text-name: "[name].replace('([\S\ ])','$1 ')";
+  text-placement: line;
+  text-face-name: @sans_bold;
+  text-fill: #666;
+  text-size: 8;
+  [zoom>=16] {
+    text-size: 10;
+    text-name: "[name].replace('([\S\ ])','$1  ')";
+  }
+  [zoom>=17] {
+    text-size: 14;
+    text-name: "[name].replace('([\S\ ])','$1   ')";
+  }
+  [zoom>=18] {
+    text-size: 16;
+    text-name: "[name].replace('([\S\ ])','$1    ')";
+  }
+}
+
+#road_label[zoom>=15][class='mainroad'] {
   text-transform: uppercase;
   text-name: "[name].replace('([\S\ ])','$1 ')";
   text-placement: line;
@@ -183,11 +216,17 @@
   text-fill: #666;
   text-size: 7;
   [zoom>=16] { text-size: 8; }
-  [zoom>=17] { text-size: 10; }
-  [zoom>=18] { text-size: 12; }
+  [zoom>=17] {
+    text-size: 10;
+    text-name: "[name].replace('([\S\ ])','$1  ')";
+  }
+  [zoom>=18] {
+    text-size: 14;
+    text-name: "[name].replace('([\S\ ])','$1   ')";
+  }
 }
 
-#road_label[zoom>=16][class='minorroads'] {
+#road_label[zoom>=16][class='minorroad'] {
   text-transform: uppercase;
   text-name: "[name].replace('([\S\ ])','$1 ')";
   text-placement: line;
@@ -195,5 +234,8 @@
   text-fill: #666;
   text-size: 7;
   [zoom>=17] { text-size: 8; }
-  [zoom>=18] { text-size: 10; }
+  [zoom>=18] {
+    text-size: 10;
+    text-name: "[name].replace('([\S\ ])','$1  ')";
+  }
 }
