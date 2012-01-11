@@ -54,7 +54,7 @@
   text-name:'[name]';
   text-face-name:@sans;
   text-placement:point;
-  text-fill:#444;
+  text-fill:#888;
   text-halo-fill:fadeout(#fff,10);
   text-halo-radius:2;
   text-transform: uppercase;

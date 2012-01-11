@@ -176,7 +176,6 @@ Map { background-color: @water; }
 /* ---- BUILDINGS ---- */
 /* Transparent buildings account for situations where routes go
    in or under them */
-@building: #48c;
 #buildings[zoom>10][zoom<=20] {
   polygon-fill:@building;
   [zoom=11] { polygon-opacity:0.1; }
