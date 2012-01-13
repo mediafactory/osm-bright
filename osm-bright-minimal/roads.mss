@@ -50,7 +50,63 @@ come in as well.
 @rdz17_maj: 20;  @rdz17_med: 15;  @rdz17_min: 10;
 @rdz18_maj: 30;  @rdz18_med: 20;  @rdz18_min: 15;
 
+/* ---- Casing ----------------------------------------------- */
+
+#roads_high::outline[zoom>=11][zoom<=20],
+#tunnel::outline[zoom>=11][zoom<=20],
+#bridge[render='1_outline'][zoom>=14][zoom<=20]{
+  /* -- colors & styles -- */
+  line-cap: butt;
+  line-join: round;
+  line-color: darken(@land,0%);
+  [bridge=1] { line-color: @bridge_case; }
+  /* -- widths -- */
+  [zoom=14] {
+    [class='motorway'] { line-width: @rdz14_maj + 2; }
+    [class='mainroad'] { line-width: @rdz14_med + 2; }
+    [class='minorroad']{ line-width: @rdz14_min + 2; }
+    /* No minor bridges yet */
+    [class='service']  { line-width: 0; }
+    [class='noauto']   { line-width: 0; }
+    [class='railway']  { line-width: 0; }
+  }
+  [zoom=15] {
+    [class='motorway'] { line-width: @rdz15_maj + 3; }
+    [class='mainroad'] { line-width: @rdz15_med + 3; }
+    [class='minorroad']{ line-width: @rdz15_min + 2.5; }
+    [class='service']  { line-width: @rdz15_min / 2 + 2; }
+    [class='noauto']   { line-width: @rdz15_min / 4 + 2; }
+    [class='railway']  { line-width: 1.5 + 2; }
+  }
+  [zoom=16] {
+    [class='motorway'] { line-width: @rdz16_maj + 3; }
+    [class='mainroad'] { line-width: @rdz16_med + 3; }
+    [class='minorroad']{ line-width: @rdz16_min + 2.5; }
+    [class='service']  { line-width: @rdz16_min / 2 + 2; }
+    [class='noauto']   { line-width: @rdz16_min / 4 + 2; }
+    [class='railway']  { line-width: 2 + 2; }
+  }
+  [zoom>=17] {
+    [class='motorway'] { line-width: @rdz17_maj + 4; }
+    [class='mainroad'] { line-width: @rdz17_med + 4; }
+    [class='minorroad']{ line-width: @rdz17_min + 3.5; }
+    [class='service']  { line-width: @rdz17_min / 2 + 3; }
+    [class='noauto']   { line-width: @rdz17_min / 4 + 6; }
+    [class='railway']  { line-width: 3 + 6; }
+  }
+  [zoom>=18] {
+    [class='motorway'] { line-width: @rdz18_maj + 4; }
+    [class='mainroad'] { line-width: @rdz18_med + 4; }
+    [class='minorroad']{ line-width: @rdz18_min + 3.5; }
+    [class='service']  { line-width: @rdz18_min / 2 + 3; }
+    [class='noauto']   { line-width: @rdz18_min / 4 + 7; }
+    [class='railway']  { line-width: 4 + 7; }
+  }
+}
+
+
 #roads_high[zoom>=11][zoom<=20],
+#tunnel[render='3_inline'][zoom>=11][zoom<=20],
 #bridge[render='3_inline'][zoom>=11][zoom<=20]{
   /* -- colors & styles -- */
   [class='railway'] {
@@ -146,57 +202,8 @@ come in as well.
   }
 }
 
-/* ---- Bridge casing ----------------------------------------------- */
-#bridge[render='1_outline'][zoom>=14][zoom<=20]{
-  /* -- colors & styles -- */
-  line-cap: butt;
-  line-join: round;
-  line-color: darken(@land,12%);
-  /* -- widths -- */
-  [zoom=14] {
-    [class='motorway'] { line-width: @rdz14_maj + 2; }
-    [class='mainroad'] { line-width: @rdz14_med + 2; }
-    [class='minorroad']{ line-width: @rdz14_min + 2; }
-    /* No minor bridges yet */
-    [class='service']  { line-width: 0; }
-    [class='noauto']   { line-width: 0; }
-    [class='railway']  { line-width: 0; }
-  }
-  [zoom=15] {
-    [class='motorway'] { line-width: @rdz15_maj + 3; }
-    [class='mainroad'] { line-width: @rdz15_med + 3; }
-    [class='minorroad']{ line-width: @rdz15_min + 2.5; }
-    [class='service']  { line-width: @rdz15_min / 2 + 2; }
-    [class='noauto']   { line-width: @rdz15_min / 4 + 2; }
-    [class='railway']  { line-width: 1.5 + 2; }
-  }
-  [zoom=16] {
-    [class='motorway'] { line-width: @rdz16_maj + 3; }
-    [class='mainroad'] { line-width: @rdz16_med + 3; }
-    [class='minorroad']{ line-width: @rdz16_min + 2.5; }
-    [class='service']  { line-width: @rdz16_min / 2 + 2; }
-    [class='noauto']   { line-width: @rdz16_min / 4 + 2; }
-    [class='railway']  { line-width: 2 + 2; }
-  }
-  [zoom>=17] {
-    [class='motorway'] { line-width: @rdz17_maj + 4; }
-    [class='mainroad'] { line-width: @rdz17_med + 4; }
-    [class='minorroad']{ line-width: @rdz17_min + 3.5; }
-    [class='service']  { line-width: @rdz17_min / 2 + 3; }
-    [class='noauto']   { line-width: @rdz17_min / 4 + 6; }
-    [class='railway']  { line-width: 3 + 6; }
-  }
-  [zoom>=18] {
-    [class='motorway'] { line-width: @rdz18_maj + 4; }
-    [class='mainroad'] { line-width: @rdz18_med + 4; }
-    [class='minorroad']{ line-width: @rdz18_min + 3.5; }
-    [class='service']  { line-width: @rdz18_min / 2 + 3; }
-    [class='noauto']   { line-width: @rdz18_min / 4 + 7; }
-    [class='railway']  { line-width: 4 + 7; }
-  }
-}
-
 /* ---- Bridge fill for dashed lines -------------------------------- */
+#tunnel[render='2_line'][zoom>=14][zoom<=20],
 #bridge[render='2_line'][zoom>=14][zoom<=20]{
   /* -- colors & styles -- */
   [class='noauto'] {
@@ -327,6 +334,36 @@ come in as well.
     text-size: 10;
     text-name: "[name].replace('([\S\ ])','$1  ')";
     text-halo-radius: 2;
+  }
+}
+
+/* == AEROWAYS ================================================= */
+
+#aeroway[zoom>9] {
+  line-color:@aeroway;
+  line-cap:butt;
+  line-join:miter;
+  [type='runway'] {
+    [zoom=10]{ line-width:1; }
+    [zoom=11]{ line-width:2; }
+    [zoom=12]{ line-width:3; }
+    [zoom=13]{ line-width:5; }
+    [zoom=14]{ line-width:7; }
+    [zoom=15]{ line-width:11; }
+    [zoom=16]{ line-width:15; }
+    [zoom=17]{ line-width:19; }
+    [zoom>17]{ line-width:23; }
+  }
+  [type='taxiway'] {
+    [zoom=10]{ line-width:0.2; }
+    [zoom=11]{ line-width:0.2; }
+    [zoom=12]{ line-width:0.2; }
+    [zoom=13]{ line-width:1; }
+    [zoom=14]{ line-width:1.5; }
+    [zoom=15]{ line-width:2; }
+    [zoom=16]{ line-width:3; }
+    [zoom=17]{ line-width:4; }
+    [zoom>17]{ line-width:5; }
   }
 }
 

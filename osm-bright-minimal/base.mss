@@ -17,27 +17,31 @@
   polygon-fill: @land;
   polygon-gamma: 0.75;
 }
-/*
+
+#landuse[zoom>12] {
+  [type='golf_course'],[type='park'],[type='pitch'] {
+    polygon-pattern-file: url(img/grass.png);
+  }
+  [type='forest'],[type='wood'] {
+    polygon-pattern-file: url(img/trees.png);
+  }
+}
+
 #landuse_gen0[zoom>3][zoom<=9],
 #landuse_gen1[zoom>9][zoom<=12],
 #landuse[zoom>12] {
-  [type='cemetery']      { polygon-fill: @cemetery; }
+/*  [type='cemetery']      { polygon-fill: @cemetery; }
   [type='college']       { polygon-fill: @school; }
   [type='commercial']    { polygon-fill: @industrial; }
-  [type='forest']        { polygon-fill: @forest; }
-  [type='golf_course']   { polygon-fill: @park; }
   [type='hospital']      { polygon-fill: @hospital; }
-  [type='industrial']    { polygon-fill: @industrial; }
-  [type='park']          { polygon-fill: @park; }
+  [type='industrial']    { polygon-fill: @industrial; }*/
   [type='parking']       { polygon-fill: @parking; }
-  [type='pedestrian']    { polygon-fill: @pedestrian_fill; }
-  [type='pitch']         { polygon-fill: @sports; }
-  [type='residential']   { polygon-fill: @residential; }
-  [type='school']        { polygon-fill: @school; }
+  [type='pedestrian']    { polygon-fill: @road_minor; }
+/*  [type='school']        { polygon-fill: @school; } */
   [type='sports_center'] { polygon-fill: @sports; }
   [type='stadium']       { polygon-fill: @sports; }
-  [type='university']    { polygon-fill: @school; }
-  [type='wood']          { polygon-fill: @forest; }
+/*  [type='university']    { polygon-fill: @school; }
+  [type='wood']          { polygon-fill: @forest; }*/
 }
 
 #landuse_overlays[type='nature_reserve'][zoom>6] {
@@ -121,7 +125,7 @@ Map { background-color: @water; }
 }
 
 
-/* == 5. WATER AREA LABELS ========================================== *
+/* == 5. WATER AREA LABELS ========================================== */
 
 #water_label[zoom>10][area>1600000],
 #water_label[zoom>11][area>4000000],
@@ -133,8 +137,8 @@ Map { background-color: @water; }
 #water_label[zoom>17] {
   text-name: '[name]';
   text-face-name: @sans;
-  text-fill: darken(@water,30);
-  text-halo-fill: #fff;
+  text-fill: #f8f8f8;
+  text-halo-fill: lighten(@water,0%);
   text-halo-radius: 2;
   text-placement: interior;
   text-size: 11;
@@ -146,8 +150,8 @@ Map { background-color: @water; }
 #waterway_label[type='stream'][zoom>11] {
   text-name: '[name]';
   text-face-name: @sans;
-  text-fill: darken(@water,20);
-  text-halo-fill: #fff;
+  text-fill: #f8f8f8;
+  text-halo-fill: lighten(@water,0%);
   text-halo-radius: 2;
   text-placement: line;
   text-min-distance: 400;
@@ -163,7 +167,7 @@ Map { background-color: @water; }
   polygon-fill:@campus;
   [zoom>12] {
     line-opacity:0.4;
-    line-color:spin(darken(@campus,20),20);
+    line-color:spin(darken(@land,20),20);
   }
   [zoom=13] { line-width:0.3; }
   [zoom=14] { line-width:0.5; }

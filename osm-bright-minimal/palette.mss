@@ -33,6 +33,21 @@
 @land:              #e8e8e8;
 @water:             #d0d0d0;
 
+@agriculture:       #f4f0e0;
+@beach:             #ffeec7;
+@building:          #e4e0e0;
+@cemetery:          #d1d1d1;
+@forest:            #c7e6a8;
+@grass:             lighten(@forest,5);
+@hospital:          rgb(229,198,195);
+@industrial:        #e8e8e8;
+@park:              lighten(@forest,10);
+@parking:           #f2f2f2;
+@residential:       desaturate(darken(@land,5),10);
+@school:            #FEA;
+@sports:            #ccc;
+@transport:         rgb(200,200,200);
+
 @building:          #ccc;
 
 /* ---- Roads ------------------------------------------------------- */
@@ -49,13 +64,11 @@
 @road_medium:       #fff;
 @road_minor:        #fff;
 
-@bridge_case:       rgba(0,0,0,0.33);
-
-@track:             #aaa;
+@bridge_case:       darken(@land,12%);
 
 @rail_line:         #fff;
 
-@aeroway:           rgb(180,180,180);
+@aeroway:           #f2f2f2;
 
 /* ---- Boundaries -------------------------------------------------- */
 
@@ -69,3 +82,8 @@
 @country_halo:      @default_halo;
 
 /* ****************************************************************** */
+
+#water_inset {
+  polygon-fill:darken(@water,10%);
+  polygon-opacity: 0.33;
+}

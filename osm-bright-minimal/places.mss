@@ -141,21 +141,21 @@
 
 
 
-/* ==== AREA LABELS ================================================ *
+/* ==== AREA LABELS ================================================ */
 
 #landuse_label[zoom>12][area>1000000] {
   [type='industrial'],[type='commercial'],[type='parking'],
   [type='park'],[type='golf_course'] {
     text-name:'[name]';
     text-face-name:@sans;
-    text-fill:#000;
-    text-halo-fill:fadeout(#fff,20);
+    text-fill:darken(@land,20%);
+    text-halo-fill: lighten(@land,0%);
     text-halo-radius:2;
     text-placement:interior;
-    text-size:11;
+    text-size:10;
     text-wrap-width:20;
   }
-  [type='cemetery'] {
+  /*[type='cemetery'] {
     text-fill:darken(@cemetery,50);
   }
   [type='park'], [type='golf_course'] {
@@ -163,7 +163,7 @@
   }
   [type='school'], [type='college'], [type='university'] {
     text-fill:darken(@school,50);
-  }
+  }*/
 }
 #landuse_label[zoom>12][area>1000000],
 #landuse_label[zoom>13][area>500000],
@@ -173,15 +173,15 @@
 #landuse_label[zoom>17] {
   text-name:'[name]';
   text-face-name:@sans;
-  text-fill:#000;
+  text-fill:darken(@land,20%);
   [type='pedestrian'] { text-fill:#333; }
-  text-halo-fill:#fff;
+  text-halo-fill: lighten(@land,0%);
   text-halo-radius:2;
   text-placement:interior;
-  text-size:11;
+  text-size:10;
   text-wrap-width:20;
   [zoom>14] { text-size:12; }
-  [type='cemetery'] {
+  /*[type='cemetery'] {
     text-fill:darken(@cemetery,50);
   }
   [type='park'], [type='golf_course'] {
@@ -189,7 +189,7 @@
   }
   [type='school'], [type='college'], [type='university'] {
     text-fill:darken(@school,50);
-  }
+  }*/
 }
 
-*/
+/**/

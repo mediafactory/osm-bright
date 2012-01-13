@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.2 r9819"
-   sodipodi:docname="New document 1">
+   sodipodi:docname="shields.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -24,21 +24,21 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2"
-     inkscape:cx="84.973248"
-     inkscape:cy="75.903806"
+     inkscape:zoom="16"
+     inkscape:cx="229.37749"
+     inkscape:cy="153.0036"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     showgrid="false"
+     showgrid="true"
      inkscape:snap-bbox="true"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-width="1280"
-     inkscape:window-height="774"
-     inkscape:window-x="0"
-     inkscape:window-y="26"
+     inkscape:window-width="1920"
+     inkscape:window-height="1080"
+     inkscape:window-x="1280"
+     inkscape:window-y="-26"
      inkscape:window-maximized="1">
     <inkscape:grid
        type="xygrid"
@@ -80,6 +80,28 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-175,-412.36218)">
+    <rect
+       style="color:#000000;fill:#e8e8e8;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect3884"
+       width="12"
+       height="11.999995"
+       x="396"
+       y="-424.36218"
+       transform="scale(1,-1)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       inkscape:export-filename="/home/aj/Documents/MapBox/osm-bright/osm-bright-minimal/img/trees.png" />
+    <rect
+       style="color:#000000;fill:#e8e8e8;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect3875"
+       width="4"
+       height="3"
+       x="413.36218"
+       y="-418"
+       inkscape:export-filename="/home/aj/Documents/MapBox/osm-bright/osm-bright-minimal/img/grass.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       transform="matrix(0,1,-1,0,0,0)" />
     <rect
        style="color:#000000;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#808080;stroke-width:1.99999988;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        id="shield-medium-light-1"
@@ -320,6 +342,144 @@
        id="shield-small-light-6"
        style="color:#000000;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#808080;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
        inkscape:label="#rect3969" />
+    <g
+       id="g3904"
+       style="fill:#d8d8d8;fill-opacity:1"
+       transform="matrix(1.1666667,0,0,1,-65.833333,-2)">
+      <path
+         sodipodi:nodetypes="ccccccc"
+         inkscape:connector-curvature="0"
+         id="path3846"
+         d="m 396,418.36218 1,0 1,-1 1,1 1,0 -2,-4 z"
+         style="fill:#d8d8d8;fill-opacity:1;stroke:none" />
+      <path
+         style="color:#000000;fill:#d8d8d8;fill-rule:evenodd;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;fill-opacity:1"
+         d="m 397.57142,424.36218 0.42856,-1 0.42858,1 0,1 -0.85714,0 z"
+         id="rect3891"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccccc" />
+      <path
+         style="fill:#d8d8d8;fill-opacity:1;stroke:none"
+         d="m 395.5,421.36218 1.25,0 1.25,-1 1.25,1 1.25,0 -2.5,-4 z"
+         id="path3915"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccc" />
+      <path
+         sodipodi:nodetypes="ccccccc"
+         inkscape:connector-curvature="0"
+         id="path3917"
+         d="m 395,424.36218 1.5,0 1.5,-1 1.5,1 1.5,0 -3,-4 z"
+         style="fill:#d8d8d8;fill-opacity:1;stroke:none" />
+    </g>
+    <rect
+       style="color:#000000;fill:#f0f0f0;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect3863"
+       width="1"
+       height="2"
+       x="413.36218"
+       y="-417"
+       transform="matrix(0,1,-1,0,0,0)"
+       inkscape:export-filename="/home/aj/Documents/MapBox/osm-bright/osm-bright-minimal/img/grass.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="color:#000000;fill:#f0f0f0;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       id="rect3865"
+       width="1"
+       height="2"
+       x="415.36218"
+       y="-418"
+       transform="matrix(0,1,-1,0,0,0)"
+       inkscape:export-filename="/home/aj/Documents/MapBox/osm-bright/osm-bright-minimal/img/grass.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       transform="matrix(1.1666667,0,0,1,-59.833347,3)"
+       style="fill:#d8d8d8;fill-opacity:1"
+       id="g3930">
+      <path
+         style="fill:#d8d8d8;fill-opacity:1;stroke:none"
+         d="m 396,418.36218 1,0 1,-1 1,1 1,0 -2,-4 z"
+         id="path3932"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccc" />
+      <path
+         sodipodi:nodetypes="cccccc"
+         inkscape:connector-curvature="0"
+         id="path3934"
+         d="m 397.57142,424.36218 0.42856,-1 0.42858,1 0,1 -0.85714,0 z"
+         style="color:#000000;fill:#d8d8d8;fill-rule:evenodd;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;fill-opacity:1" />
+      <path
+         sodipodi:nodetypes="ccccccc"
+         inkscape:connector-curvature="0"
+         id="path3936"
+         d="m 395.5,421.36218 1.25,0 1.25,-1 1.25,1 1.25,0 -2.5,-4 z"
+         style="fill:#d8d8d8;fill-opacity:1;stroke:none" />
+      <path
+         style="fill:#d8d8d8;fill-opacity:1;stroke:none"
+         d="m 395,424.36218 1.5,0 1.5,-1 1.5,1 1.5,0 -3,-4 z"
+         id="path3938"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccc" />
+    </g>
+    <g
+       transform="matrix(1.1666667,0,0,1,-53.833347,-2)"
+       style="fill:#d8d8d8;fill-opacity:1"
+       id="g3960">
+      <path
+         style="fill:#d8d8d8;fill-opacity:1;stroke:none"
+         d="m 396,418.36218 1,0 1,-1 1,1 1,0 -2,-4 z"
+         id="path3962"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccc" />
+      <path
+         sodipodi:nodetypes="cccccc"
+         inkscape:connector-curvature="0"
+         id="path3964"
+         d="m 397.57142,424.36218 0.42856,-1 0.42858,1 0,1 -0.85714,0 z"
+         style="color:#000000;fill:#d8d8d8;fill-rule:evenodd;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;fill-opacity:1" />
+      <path
+         sodipodi:nodetypes="ccccccc"
+         inkscape:connector-curvature="0"
+         id="path3966"
+         d="m 395.5,421.36218 1.25,0 1.25,-1 1.25,1 1.25,0 -2.5,-4 z"
+         style="fill:#d8d8d8;fill-opacity:1;stroke:none" />
+      <path
+         style="fill:#d8d8d8;fill-opacity:1;stroke:none"
+         d="m 395,424.36218 1.5,0 1.5,-1 1.5,1 1.5,0 -3,-4 z"
+         id="path3968"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccc" />
+    </g>
+    <g
+       id="g4010"
+       style="fill:#d8d8d8;fill-opacity:1"
+       transform="matrix(1.1666667,0,0,1,-59.833347,-9)">
+      <path
+         sodipodi:nodetypes="ccccccc"
+         inkscape:connector-curvature="0"
+         id="path4012"
+         d="m 396,418.36218 1,0 1,-1 1,1 1,0 -2,-4 z"
+         style="fill:#d8d8d8;fill-opacity:1;stroke:none" />
+      <path
+         style="color:#000000;fill:#d8d8d8;fill-rule:evenodd;stroke:none;stroke-width:1px;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;fill-opacity:1"
+         d="m 397.57142,424.36218 0.42856,-1 0.42858,1 0,1 -0.85714,0 z"
+         id="path4014"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccccc" />
+      <path
+         style="fill:#d8d8d8;fill-opacity:1;stroke:none"
+         d="m 395.5,421.36218 1.25,0 1.25,-1 1.25,1 1.25,0 -2.5,-4 z"
+         id="path4016"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccc" />
+      <path
+         sodipodi:nodetypes="ccccccc"
+         inkscape:connector-curvature="0"
+         id="path4018"
+         d="m 395,424.36218 1.5,0 1.5,-1 1.5,1 1.5,0 -3,-4 z"
+         style="fill:#d8d8d8;fill-opacity:1;stroke:none" />
+    </g>
   </g>
   <g
      inkscape:groupmode="layer"
