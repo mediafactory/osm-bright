@@ -33,9 +33,9 @@
 @land:              #e8e8e8;
 @water:             #d0d0d0;
 
-@agriculture:       #f4f0e0;
+@agriculture:       #f00;
 @beach:             #ffeec7;
-@building:          #e4e0e0;
+@building:          #ccc;
 @cemetery:          #d1d1d1;
 @forest:            #c7e6a8;
 @grass:             lighten(@forest,5);
@@ -48,7 +48,6 @@
 @sports:            #ccc;
 @transport:         rgb(200,200,200);
 
-@building:          #ccc;
 
 /* ---- Roads ------------------------------------------------------- */
 /* For each class of road there are three color variables:

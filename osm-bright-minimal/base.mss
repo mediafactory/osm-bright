@@ -145,7 +145,7 @@ Map { background-color: @water; }
   text-wrap-width: 20;
 }
 
-#waterway_label[type='river'][zoom>5],
+/*#waterway_label[type='river'][zoom>5],
 #waterway_label[type='canal'][zoom>9],
 #waterway_label[type='stream'][zoom>11] {
   text-name: '[name]';
@@ -156,7 +156,7 @@ Map { background-color: @water; }
   text-placement: line;
   text-min-distance: 400;
   text-size: 10;
-}
+}*/
 
 /* ---- CAMPUSES ---- */
 /* Note that amenity=school, amenity=hospital, etc are ideally polygons of the
