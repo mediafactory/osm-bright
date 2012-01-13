@@ -132,7 +132,7 @@
         "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34", 
         "geometry_field": "", 
         "key_field": "", 
-        "table": "( SELECT geometry, type, 0 as bridge, access, render, layer, tunnel,\n  CASE\n    WHEN type IN ('motorway', 'trunk') THEN 'motorway'\n    WHEN type IN ('primary', 'secondary') THEN 'mainroad'\n    WHEN type IN ('motorway_link', 'trunk_link', 'primary_link', 'secondary_link', 'tertiary', 'tertiary_link', 'residential', 'unclassified', 'road', 'living_street') THEN 'minorroad'\n    WHEN type IN ('service', 'track') THEN 'service'\n    WHEN type IN ('path', 'cycleway', 'footway', 'pedestrian', 'steps', 'bridleway') THEN 'noauto'\n    WHEN type IN ('light_rail', 'subway', 'narrow_guage', 'rail', 'tram') THEN 'railway'\n    ELSE 'other' END AS class\n  FROM (\n    SELECT *, '1_outline' AS render FROM osm_roads WHERE tunnel = 1\n    UNION\n    SELECT *, '2_line' AS render FROM osm_roads WHERE tunnel = 1\n    UNION\n    SELECT *, '3_inline' AS render FROM osm_roads WHERE tunnel = 1\n  ) AS tunnels\n  ORDER BY layer ASC, render ASC\n) AS data", 
+        "table": "( SELECT geometry, type, 0 as bridge, access, render, layer, tunnel,\n  CASE\n    WHEN type IN ('motorway', 'trunk') THEN 'motorway'\n    WHEN type IN ('primary', 'secondary') THEN 'mainroad'\n    WHEN type IN ('motorway_link', 'trunk_link', 'primary_link', 'secondary_link', 'tertiary', 'tertiary_link', 'residential', 'unclassified', 'road', 'living_street') THEN 'minorroad'\n    WHEN type IN ('service', 'track') THEN 'service'\n    WHEN type IN ('path', 'cycleway', 'footway', 'pedestrian', 'steps', 'bridleway') THEN 'noauto'\n    WHEN type IN ('light_rail', 'subway', 'narrow_guage', 'rail', 'tram') THEN 'railway'\n    ELSE 'other' END AS stylegroup\n  FROM (\n    SELECT *, '1_outline' AS render FROM osm_roads WHERE tunnel = 1\n    UNION\n    SELECT *, '2_line' AS render FROM osm_roads WHERE tunnel = 1\n    UNION\n    SELECT *, '3_inline' AS render FROM osm_roads WHERE tunnel = 1\n  ) AS tunnels\n  ORDER BY layer ASC, render ASC\n) AS data", 
         "type": "postgis"
       }, 
       "class": "", 
@@ -199,7 +199,7 @@
         "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34", 
         "geometry_field": "geometry", 
         "key_field": "", 
-        "table": "( SELECT geometry, type, tunnel, bridge, access, 'fill' AS render,\n  CASE\n    WHEN type IN ('motorway', 'trunk') THEN 'motorway'\n    WHEN type IN ('primary', 'secondary') THEN 'mainroad'\n    WHEN type IN ('motorway_link', 'trunk_link', 'primary_link', 'secondary_link', 'tertiary', 'tertiary_link', 'residential', 'unclassified', 'road', 'living_street') THEN 'minorroad'\n    WHEN type IN ('service', 'track') THEN 'service'\n    WHEN type IN ('path', 'cycleway', 'footway', 'pedestrian', 'steps', 'bridleway') THEN 'noauto'\n    WHEN type IN ('light_rail', 'subway', 'narrow_guage', 'rail', 'tram') THEN 'railway'\n    ELSE 'other' END AS class\n  FROM osm_roads\n  WHERE bridge = 0\n    AND tunnel = 0\n  ORDER BY z_order\n) AS data", 
+        "table": "( SELECT geometry, type, tunnel, bridge, access, 'fill' AS render,\n  CASE\n    WHEN type IN ('motorway', 'trunk') THEN 'motorway'\n    WHEN type IN ('primary', 'secondary') THEN 'mainroad'\n    WHEN type IN ('motorway_link', 'trunk_link', 'primary_link', 'secondary_link', 'tertiary', 'tertiary_link', 'residential', 'unclassified', 'road', 'living_street') THEN 'minorroad'\n    WHEN type IN ('service', 'track') THEN 'service'\n    WHEN type IN ('path', 'cycleway', 'footway', 'pedestrian', 'steps', 'bridleway') THEN 'noauto'\n    WHEN type IN ('light_rail', 'subway', 'narrow_guage', 'rail', 'tram') THEN 'railway'\n    ELSE 'other' END AS stylegroup\n  FROM osm_roads\n  WHERE bridge = 0\n    AND tunnel = 0\n  ORDER BY z_order\n) AS data", 
         "type": "postgis"
       }, 
       "class": "", 
@@ -215,14 +215,15 @@
         "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34", 
         "geometry_field": "", 
         "key_field": "", 
-        "table": "(select geometry, type,bridge,tunnel,\ncase when type in ('motorway', 'trunk') then 'major'\n     when type in ('primary', 'secondary') then 'medium'\n     when type in ('tertiary') then 'minor'\n     else 'none' end as class\nfrom osm_roads_gen1) as road", 
+        "table": "( SELECT geometry, type, bridge, tunnel,\n    CASE\n      WHEN type IN ('motorway', 'trunk') THEN 'major'\n      WHEN type IN ('primary', 'secondary') THEN 'medium'\n      WHEN type IN ('tertiary') THEN 'minor'\n      ELSE 'none' END AS stylegroup\n    FROM osm_roads_gen1\n) AS data", 
         "type": "postgis"
       }, 
       "class": "", 
       "geometry": "linestring", 
       "id": "roads_med", 
       "name": "roads_med", 
-      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over", 
+      "srs-name": "900913"
     }, 
     {
       "Datasource": {
@@ -230,7 +231,7 @@
         "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34", 
         "geometry_field": "geometry", 
         "key_field": "", 
-        "table": "(select geometry, type,bridge,tunnel,\ncase when type in ('motorway') then 'major'\n     when type in ('trunk') then 'medium'\n     else 'minor' end as class\nfrom osm_roads_gen0) as road", 
+        "table": "( SELECT geometry, type, bridge, tunnel,\n    CASE\n      WHEN type IN ('motorway') THEN 'major'\n      WHEN type IN ('trunk') THEN 'medium'\n      ELSE 'minor' END AS stylegroup\n    FROM osm_roads_gen0\n) AS data", 
         "type": "postgis"
       }, 
       "class": "", 
@@ -238,6 +239,7 @@
       "id": "roads_low", 
       "name": "roads_low", 
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over", 
+      "srs-name": "900913", 
       "status": "on"
     }, 
     {
@@ -261,7 +263,7 @@
         "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34", 
         "geometry_field": "geometry", 
         "key_field": "", 
-        "table": "( SELECT geometry, type, bridge, access, render, layer, 0 as tunnel,\n  CASE\n    WHEN type IN ('motorway', 'trunk') THEN 'motorway'\n    WHEN type IN ('primary', 'secondary') THEN 'mainroad'\n    WHEN type IN ('motorway_link', 'trunk_link', 'primary_link', 'secondary_link', 'tertiary', 'tertiary_link', 'residential', 'unclassified', 'road', 'living_street') THEN 'minorroad'\n    WHEN type IN ('service', 'track') THEN 'service'\n    WHEN type IN ('path', 'cycleway', 'footway', 'pedestrian', 'steps', 'bridleway') THEN 'noauto'\n    WHEN type IN ('light_rail', 'subway', 'narrow_guage', 'rail', 'tram') THEN 'railway'\n    ELSE 'other' END AS class\n  FROM (\n    SELECT *, '1_outline' AS render FROM osm_roads WHERE bridge = 1\n    UNION\n    SELECT *, '2_line' AS render FROM osm_roads WHERE bridge = 1\n    UNION\n    SELECT *, '3_inline' AS render FROM osm_roads WHERE bridge = 1\n  ) as bridges\n  ORDER BY layer ASC, render ASC\n) AS data\n", 
+        "table": "( SELECT geometry, type, bridge, access, render, layer, 0 as tunnel,\n  CASE\n    WHEN type IN ('motorway', 'trunk') THEN 'motorway'\n    WHEN type IN ('primary', 'secondary') THEN 'mainroad'\n    WHEN type IN ('motorway_link', 'trunk_link', 'primary_link', 'secondary_link', 'tertiary', 'tertiary_link', 'residential', 'unclassified', 'road', 'living_street') THEN 'minorroad'\n    WHEN type IN ('service', 'track') THEN 'service'\n    WHEN type IN ('path', 'cycleway', 'footway', 'pedestrian', 'steps', 'bridleway') THEN 'noauto'\n    WHEN type IN ('light_rail', 'subway', 'narrow_guage', 'rail', 'tram') THEN 'railway'\n    ELSE 'other' END AS stylegroup\n  FROM (\n    SELECT *, '1_outline' AS render FROM osm_roads WHERE bridge = 1\n    UNION\n    SELECT *, '2_line' AS render FROM osm_roads WHERE bridge = 1\n    UNION\n    SELECT *, '3_inline' AS render FROM osm_roads WHERE bridge = 1\n  ) as bridges\n  ORDER BY layer ASC, render ASC\n) AS data\n", 
         "type": "postgis"
       }, 
       "class": "", 
@@ -315,7 +317,7 @@
         "extent": "-20037508.34 -20037508.34 20037508.34 20037508.34", 
         "geometry_field": "geometry", 
         "key_field": "", 
-        "table": "(select\n  geometry,\n  type,\n  name,\n  ref,\n  char_length(ref) as reflen,\n  oneway\nfrom osm_motorways\nwhere name is not null or ref is not null or oneway = 1\n) as label", 
+        "table": "( SELECT geometry, type, name, ref, CHAR_LENGTH(ref) AS reflen\n    FROM osm_motorways\n    WHERE type IN ('motorway', 'trunk')\n      AND (name IS NOT NULL OR ref IS NOT NULL)\n) AS data", 
         "type": "postgis"
       }, 
       "class": "", 
@@ -323,6 +325,7 @@
       "id": "motorway_label", 
       "name": "motorway_label", 
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over", 
+      "srs-name": "900913", 
       "status": "on"
     }, 
     {
@@ -404,19 +407,19 @@
     "palette.mss", 
     "base.mss", 
     "roads.mss", 
-    "places.mss"
+    "labels.mss"
   ], 
   "attribution": "", 
   "bounds": [
-    -87.7279, 
-    41.7611, 
-    -87.5452, 
-    41.9763
+    -71.8372, 
+    41.9615, 
+    -70.6287, 
+    42.7026
   ], 
   "center": [
-    -87.6245, 
-    41.8754, 
-    13
+    -71.0571, 
+    42.3637, 
+    14
   ], 
   "description": "", 
   "format": "png8", 
@@ -429,7 +432,7 @@
   }, 
   "legend": "", 
   "maxzoom": 18, 
-  "minzoom": 10, 
+  "minzoom": 8, 
   "name": "OSM Bright Minimal", 
   "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
 }

@@ -19,8 +19,8 @@
 @sans_lt:           "Helvetica Neue LT Std 55 Roman","DejaVu Sans Book";
 @sans:              "Helvetica Neue LT Std 65 Medium","DejaVu Sans Book";
 @sans_bold:         "Helvetica Neue LT Std 75 Bold", "DejaVu Sans Bold";
-@sans_italic:       "Droid Sans Italic","Arial Italic", "DejaVu Sans Oblique";
-@sans_bold_italic:  "Droid Sans Bold Italic","Arial Bold Italic", " DejaVu Sans Bold Oblique";
+@sans_italic:       "Helvetica Neue LT Std 66 Medium Italic", "DejaVu Sans Oblique";
+@sans_bold_italic:  "Helvetica Neue LT Std 76 Bold Italic", " DejaVu Sans Bold Oblique";
 
 /* Some fonts are larger or smaller than others. Use this variable to
    globally increase or decrease the font sizes. */
@@ -81,8 +81,3 @@
 @country_halo:      @default_halo;
 
 /* ****************************************************************** */
-
-#water_inset {
-  polygon-fill:darken(@water,10%);
-  polygon-opacity: 0.33;
-}

@@ -36,7 +36,7 @@
   [type='hospital']      { polygon-fill: @hospital; }
   [type='industrial']    { polygon-fill: @industrial; }*/
   [type='parking']       { polygon-fill: @parking; }
-  [type='pedestrian']    { polygon-fill: @road_minor; }
+  [type='pedestrian']    { polygon-fill: @parking; }
 /*  [type='school']        { polygon-fill: @school; } */
   [type='sports_center'] { polygon-fill: @sports; }
   [type='stadium']       { polygon-fill: @sports; }
@@ -125,38 +125,7 @@ Map { background-color: @water; }
 }
 
 
-/* == 5. WATER AREA LABELS ========================================== */
 
-#water_label[zoom>10][area>1600000],
-#water_label[zoom>11][area>4000000],
-#water_label[zoom>12][area>1000000],
-#water_label[zoom>13][area>500000],
-#water_label[zoom>14][area>250000],
-#water_label[zoom>15][area>125000],
-#water_label[zoom>16][area>612500],
-#water_label[zoom>17] {
-  text-name: '[name]';
-  text-face-name: @sans;
-  text-fill: #f8f8f8;
-  text-halo-fill: lighten(@water,0%);
-  text-halo-radius: 2;
-  text-placement: interior;
-  text-size: 11;
-  text-wrap-width: 20;
-}
-
-/*#waterway_label[type='river'][zoom>5],
-#waterway_label[type='canal'][zoom>9],
-#waterway_label[type='stream'][zoom>11] {
-  text-name: '[name]';
-  text-face-name: @sans;
-  text-fill: #f8f8f8;
-  text-halo-fill: lighten(@water,0%);
-  text-halo-radius: 2;
-  text-placement: line;
-  text-min-distance: 400;
-  text-size: 10;
-}*/
 
 /* ---- CAMPUSES ---- */
 /* Note that amenity=school, amenity=hospital, etc are ideally polygons of the
@@ -179,7 +148,7 @@ Map { background-color: @water; }
 
 /* ---- BUILDINGS ---- */
 /* Transparent buildings account for situations where routes go
-   in or under them */
+   in or under them. */
 #buildings[zoom>10][zoom<=20] {
   polygon-fill:@building;
   [zoom=11] { polygon-opacity:0.1; }
