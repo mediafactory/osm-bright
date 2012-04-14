@@ -50,6 +50,9 @@ def build():
           layer["Datasource"][opt] = val
 
   template["name"] = config["name"]
+  template["center"] = config["center"]
+  template["bounds"] = config["bounds"]
+  template["format"] = config["format"]
 
   #dump the filled-in project template to the build dir
   with open(join('build', 'project.mml'), 'w') as output:

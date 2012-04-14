@@ -26,8 +26,8 @@ config["postgis"]["user"]     = ""
 config["postgis"]["password"] = ""
 
 # default map settings (e.g. Luebeck, Germany)
-config["center"] = "10.7913,53.9019,11"
-config["bounds"] = "10.5627,53.7808,10.9932,54.0267"
+config["center"] = [10.7913,53.9019,11]
+config["bounds"] = [10.5627,53.7808,10.9932,54.026]
 
 # export
 config["format"] = "png8"
