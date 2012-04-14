@@ -81,6 +81,9 @@ def pull():
   defaultconfig["name"] = "NYC Bright Osm2pgsql"
   defaultconfig["processed_p"] = "http://tilemill-data.s3.amazonaws.com/osm/coastline-good.zip"
   defaultconfig["shoreline_300"] = "http://tilemill-data.s3.amazonaws.com/osm/shoreline_300.zip"
+  defaultconfig["center"] = "0,20,4"
+  defaultconfig["bounds"] = "-180,-85.0511,180,85.0511"
+  defaultconfig["format"] = "png"
 
   for layer in project["Layer"]:
     if layer["id"] == "shoreline_300":

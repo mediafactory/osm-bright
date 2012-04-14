@@ -82,6 +82,9 @@ def pull():
   defaultconfig["name"] = "OSM Bright"
   defaultconfig["processed_p"] = "http://tilemill-data.s3.amazonaws.com/osm/coastline-good.zip"
   defaultconfig["shoreline_300"] = "http://tilemill-data.s3.amazonaws.com/osm/shoreline_300.zip"
+  defaultconfig["center"] = "0,20,4"
+  defaultconfig["bounds"] = "-180,-85.0511,180,85.0511"
+  defaultconfig["format"] = "png"
 
   project["name"] = defaultconfig["name"]
   for layer in project["Layer"]:
