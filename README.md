@@ -3,10 +3,10 @@ OSM Bright
 a fork by http://www.mediafactory.de
 
 bright sample
-![screenshot](https://raw.github.com/henner/osm-bright/master/preview_bright.png)
+![screenshot](https://raw.github.com/mediafactory/osm-bright/master/preview_bright.png)
 
 black & white sample
-![screenshot](https://raw.github.com/henner/osm-bright/master/preview_bw.png)
+![screenshot](https://raw.github.com/mediafactory/osm-bright/master/preview_bw.png)
 
 OSM Bright is a sensible starting point for quickly making beautiful maps based
 on an OpenStreetMap database. It is written in the [Carto][] styling language
