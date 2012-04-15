@@ -1,5 +1,6 @@
 OSM Bright
 ==========
+a fork by http://www.mediafactory.de
 
 bright sample
 ![screenshot](https://raw.github.com/henner/osm-bright/master/preview_bright.png)
